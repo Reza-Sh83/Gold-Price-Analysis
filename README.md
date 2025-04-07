@@ -1,4 +1,4 @@
-# 📈 Econophysics: Gold Price Analysis
+# 📈 Gold Price Analysis
 
 This project applies **Econophysics techniques** to analyze gold price data. It includes advanced statistical and nonlinear time-series analysis, such as permutation entropy and transition matrices. The goal is to understand the complex dynamics of gold prices using tools inspired by physics.
 
