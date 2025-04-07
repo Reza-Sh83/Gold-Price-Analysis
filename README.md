@@ -75,22 +75,6 @@ prices = preprocess_gold_data(prices)
 ... # Continue with analysis
 ```
 
----
-
-## 🧠 References
-
-- Bandt & Pompe, “Permutation Entropy” (2002)
-- Mantegna & Stanley, “An Introduction to Econophysics” (2000)
-- Scarpino & Petri, “Predictability of COVID-19” using entropy
-
----
-
-## 📬 Contact
-
-Created by **Reza @ Sharif University of Technology**. For questions, reach out via GitHub or email.
-
-
-
 ## 📚 References
 
 - Bandt, C., & Pompe, B. (2002). *Permutation entropy: A natural complexity measure for time series*. Physical review letters.
