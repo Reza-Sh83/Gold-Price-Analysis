@@ -1,78 +1,95 @@
-# 📈 Gold Price Time Series Analysis with Entropy and Complexity Measures
+# 📈 Econophysics: Gold Price Analysis
 
-This project analyzes the dynamics of gold prices using methods from time series analysis, information theory, and symbolic dynamics. Inspired by approaches in Econophysics, the code investigates the underlying stochastic and nonlinear properties of financial time series.
-
----
-
-## 🧩 Overview
-
-The workflow includes:
-
-- **Data Preprocessing**: Reading gold price data and applying moving averages to reduce microstructure noise.
-- **Statistical Physics Measures**: Computing kernel-based metrics (M¹ and M²) to assess time series complexity.
-- **Probability Distribution Function (PDF)**: Constructing the empirical PDF and analyzing the tail with a power-law fit.
-- **Ordinal Pattern Analysis**: Embedding time series into ordinal patterns and calculating permutation entropy.
-- **Symbolic Dynamics**: Constructing and visualizing the transition matrix between ordinal patterns.
+This project applies **Econophysics techniques** to analyze gold price data. It includes advanced statistical and nonlinear time-series analysis, such as permutation entropy and transition matrices. The goal is to understand the complex dynamics of gold prices using tools inspired by physics.
 
 ---
 
-## 🛠 Features
+## 🚀 Features
 
-### ✅ Data Preprocessing
-- Reads price data from CSV and computes log-returns.
-- Applies moving average smoothing to reduce noise.
-
-### 🔍 Complexity Metrics
-- Computes **M¹** and **M²** kernel-based metrics:
-  - M¹ = \(\sqrt{\langle (X_{t+1} - X_t)^2 \rangle}\)
-  - M² = \(\langle |X_{t+1} - X_t| \rangle\)
-
-### 📊 PDF and Tail Fitting
-- Uses the Freedman–Diaconis rule to create a histogram.
-- Analyzes tail behavior by fitting \( f(y) \sim \frac{1}{y^b} \) for large \( y \).
-
-### 🔢 Ordinal Pattern Analysis
-- Embeds time series into ordinal patterns of order \( D \).
-- Counts pattern frequencies and computes **normalized permutation entropy**.
-
-### 🔁 Transition Matrix
-- Constructs a matrix showing transition probabilities between ordinal patterns.
-- Visualizes with heatmaps.
+- **Noise reduction** using moving averages
+- **PDF estimation** with Freedman-Diaconis binning
+- **Power-law fit** to tails of distribution
+- **Ordinal pattern analysis**
+- **Permutation entropy** (normalized)
+- **Transition matrix and conditional probability** heatmaps
 
 ---
 
-## 🧠 Requirements
+## 🧪 Methodology
 
-- Python 3.8+
-- NumPy
-- Pandas
-- Matplotlib
-- SciPy
+1. **Preprocessing**: Smooth price data to remove microstructure noise
+2. **Normalized differences**: Standardized returns (detrended)
+3. **PDF Plotting**: Histogram (log-log scale) with fitted tail
+4. **Ordinal Pattern Detection**:
+   - Sliding window of size `D` to create rank-based patterns
+   - Filter for unique permutations only
+5. **Permutation Entropy**:
+   - Entropy of ordinal pattern frequency distribution
+   - Normalized by maximum entropy (log of factorial D)
+6. **Conditional Probabilities**:
+   - Compute transitions between consecutive patterns
+   - Visualize as a **heatmap** of transition matrix
 
-Install dependencies with:
+---
+
+## 📊 Example Output
+
+### Normalized Price Differences
+<img src="Normalized Difference y(N).png" width="450">
+
+### PDF in Log-Log Scale
+<img src="Probability Density Function (PDF) - Log-Log Scale.png" width="450">
+
+### Permutation Entropy (Sample Output)
+```
+Permutation Entropy (D=2): 0.999975
+Permutation Entropy (D=3): 0.674493
+Permutation Entropy (D=4): 0.551636
+...
+```
+
+### Transition Matrix Heatmap (for D=5)
+<img src="Transition Matrix Heatmap for D=5.png" width="450">
+
+---
+
+## 📌 Requirements
 
 ```bash
-pip install numpy pandas matplotlib scipy
+numpy
+matplotlib
+scipy
+seaborn
+pandas
 ```
 
 ---
 
-## 📌 How to Use
+## ▶️ How to Run
 
-1. Place your gold price CSV file as `gold_prices.csv` in the root directory.
-2. Run the analysis script:
-
-```bash
-python gold_analysis.py
+```python
+# In Jupyter Notebook or Python script
+file_path = "path/to/Gold_Processed_Prices.txt"
+prices = read_file(file_path)
+prices = preprocess_gold_data(prices)
+... # Continue with analysis
 ```
 
-3. Output will include:
-   - Kernel-based measures
-   - PDF histogram and power-law tail fit
-   - Permutation entropy vs embedding dimension
-   - Transition matrices for symbolic dynamics
+---
+
+## 🧠 References
+
+- Bandt & Pompe, “Permutation Entropy” (2002)
+- Mantegna & Stanley, “An Introduction to Econophysics” (2000)
+- Scarpino & Petri, “Predictability of COVID-19” using entropy
 
 ---
+
+## 📬 Contact
+
+Created by **Reza @ Sharif University of Technology**. For questions, reach out via GitHub or email.
+
+
 
 ## 📚 References
 
