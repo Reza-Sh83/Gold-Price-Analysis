@@ -348,7 +348,7 @@ def plot_transition_matrix_heatmap(transition_matrix, unique_patterns, D):
 
 # %%
 # Main execution
-file_path = r"D:\My physics project\Econophysics\Data\Data_Ex1\Gold\Gold_Processed_Prices.txt"
+file_path = r"YOUR FILE PATH"
 prices = read_file(file_path)
 prices = preprocess_gold_data(prices, window_size=17)
 
